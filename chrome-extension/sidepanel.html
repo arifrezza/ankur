@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VC Survey Automation</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Survey Automation</h1>
+      <p class="subtitle">Vantage Circle</p>
+    </div>
+
+    <!-- Survey ID -->
+    <div class="section">
+      <label for="surveyId">Survey ID</label>
+      <input type="text" id="surveyId" value="746" placeholder="Enter survey ID">
+    </div>
+
+    <!-- Mode Toggle -->
+    <div class="section">
+      <label>Mode</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active" id="btnSingleMode">Single User</button>
+        <button class="toggle-btn" id="btnMultiMode">Multi User</button>
+      </div>
+    </div>
+
+    <!-- Single User Panel -->
+    <div id="singlePanel" class="panel">
+      <p class="hint">Make sure you are logged into Vantage Circle in the active tab.</p>
+      <button class="btn btn-primary" id="btnStartSingle">Start Survey</button>
+    </div>
+
+    <!-- Multi User Panel -->
+    <div id="multiPanel" class="panel hidden">
+      <div class="file-import">
+        <label for="fileInput" class="btn btn-secondary">Import credentials.json</label>
+        <input type="file" id="fileInput" accept=".json" hidden>
+        <p class="file-info" id="fileInfo">No file imported</p>
+      </div>
+      <button class="btn btn-primary" id="btnStartMulti" disabled>Start Bulk Automation</button>
+    </div>
+
+    <!-- Progress Section -->
+    <div id="progressSection" class="section hidden">
+      <div class="progress-header">
+        <span id="progressText">0 / 0 users</span>
+        <span id="currentEmail"></span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="counters">
+        <span class="counter success" id="successCount">0 passed</span>
+        <span class="counter fail" id="failCount">0 failed</span>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="section">
+      <div class="status-badge" id="statusBadge">Ready</div>
+    </div>
+
+    <!-- Stop Button -->
+    <button class="btn btn-danger hidden" id="btnStop">Stop Automation</button>
+
+    <!-- Log -->
+    <div class="section">
+      <label>Activity Log</label>
+      <div class="log-container" id="logContainer">
+        <p class="log-entry log-info">Extension loaded. Ready to automate.</p>
+      </div>
+      <button class="btn btn-small" id="btnClearLog">Clear Log</button>
+    </div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

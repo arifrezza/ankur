@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #1a1a2e;
+  background: #f5f6fa;
+  min-width: 300px;
+}
+
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e8e8f0;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.header .subtitle {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 2px;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.15);
+}
+
+/* Toggle */
+.toggle-group {
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.toggle-btn:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+/* Panels */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+/* File Import */
+.file-import {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.file-info {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3a7bc8;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #4a90d9;
+  border: 1px solid #4a90d9;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: #f0f7ff;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 11px;
+  background: #eee;
+  color: #666;
+  align-self: flex-end;
+}
+
+.btn-small:hover {
+  background: #ddd;
+}
+
+/* Progress */
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+}
+
+#currentEmail {
+  font-weight: 600;
+  color: #4a90d9;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-bar-container {
+  height: 8px;
+  background: #e8e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4a90d9, #5ba8f5);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.counters {
+  display: flex;
+  gap: 12px;
+}
+
+.counter {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.counter.success {
+  color: #27ae60;
+}
+
+.counter.fail {
+  color: #e74c3c;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  background: #eef2f7;
+  color: #7f8c8d;
+}
+
+.status-badge.running {
+  background: #fef9e7;
+  color: #f39c12;
+}
+
+.status-badge.completed {
+  background: #e8f8f0;
+  color: #27ae60;
+}
+
+.status-badge.error {
+  background: #fde8e8;
+  color: #e74c3c;
+}
+
+/* Log */
+.log-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background: #1a1a2e;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.log-entry {
+  font-family: "SF Mono", "Consolas", "Monaco", monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #a8b2d1;
+  word-break: break-word;
+}
+
+.log-entry.log-success {
+  color: #27ae60;
+}
+
+.log-entry.log-error {
+  color: #e74c3c;
+}
+
+.log-entry.log-info {
+  color: #5ba8f5;
+}
