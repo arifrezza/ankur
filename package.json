@@ -1,0 +1,30 @@
+{
+  "name": "survey-automation",
+  "version": "1.0.0",
+  "description": "Automated survey completion for Vantage Circle using Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:single": "npx playwright test --grep 'Single User'",
+    "test:sequential": "npx playwright test tests/sequential-automation.spec.js",
+    "test:sequential:headed": "npx playwright test tests/sequential-automation.spec.js --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report",
+    "install:browsers": "npx playwright install",
+    "generate:credentials": "node generate-credentials.js"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "survey",
+    "vantage-circle"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "playwright-test": "^14.1.12"
+  }
+}
